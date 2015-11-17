@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>pers.ash</groupId>
-	<artifactId>encrypt-tools</artifactId>
+	<artifactId>util-tools</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>encrypt-tools</name>
+	<name>util-tools</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

@@ -2,6 +2,7 @@ package pers.ash.util.properties;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import org.junit.Test;
 
@@ -41,6 +42,12 @@ public class PropertyUtilsTest {
 		props.put("password", "654123");
 		props.put("email", "asher@sina.com");
 		PropertyUtils.setProperty(props);
+	}
+	
+	@Test
+	public void testGetProperties(){
+		Properties props = PropertyUtils.getProperties("test.properties");
+		PropertyUtils.print(props);
 	}
 	
 }

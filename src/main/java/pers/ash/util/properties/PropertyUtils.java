@@ -53,6 +53,26 @@ public class PropertyUtils {
 		}
 	}
 	
+	public static Properties getProperties(String fileName){
+		props = new Properties();
+		try {
+			inStream = clazz.getResourceAsStream(getFilePath(fileName));
+			props.load(inStream);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (inStream != null) {
+					inStream.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return props;
+	}
+	
 	/**
 	 * 设置要操作的属性文件,默认为只读操作
 	 * @param fileName 文件名
@@ -142,9 +162,22 @@ public class PropertyUtils {
 
 	/**
 	 * 输出属性值
-	 * @param props 属性文件对象
 	 */
 	public static void print(){
+		if (props != null && !props.isEmpty()) {
+			for (Entry<Object, Object> entry : props.entrySet()) {
+				String key = (String) entry.getKey();
+				String value = (String) entry.getValue();
+				System.out.println(key + " = " + value);
+			}
+		}
+	}
+	
+	/**
+	 * 输出属性值
+	 * @param props 属性文件对象
+	 */
+	public static void print(Properties props){
 		if (props != null && !props.isEmpty()) {
 			for (Entry<Object, Object> entry : props.entrySet()) {
 				String key = (String) entry.getKey();

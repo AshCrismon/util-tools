@@ -4,6 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
@@ -31,10 +34,25 @@ public class Timer extends JFrame implements Runnable{
 	private JLabel colon1 = new JLabel(":");
 	private JLabel colon2 = new JLabel(":");
 	
+	private volatile boolean stop = false;
+	
 	public Timer(){
 		this(DEFAULT_NAME);
+		addWindowListener();
 	}
 	
+	private void addWindowListener() {
+		this.addWindowListener(new WindowAdapter() {
+			
+			@Override
+			public void windowClosing(WindowEvent e) {
+				stop = true;
+				
+			}
+
+		});
+	}
+
 	public Timer(String name){
 		setTitle("计时器");
 		setSize(400, 115);
@@ -42,7 +60,7 @@ public class Timer extends JFrame implements Runnable{
 		setVisible(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//使用system.exit退出，system.exit会终止jvm
 		
 		p.setSize(280, 50);
 		p.setLayout(new FlowLayout());
@@ -81,7 +99,7 @@ public class Timer extends JFrame implements Runnable{
 	}
 	
 	public void run() {
-		while(true){
+		while(!stop){
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {

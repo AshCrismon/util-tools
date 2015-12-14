@@ -25,14 +25,14 @@ public class ThreadPoolTest {
 			//将线程放进线程池
 			pool.execute(timer);
 		}
-		Thread.sleep(20000);
 		pool.shutdown();
+		pool.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS); //放在shutdown后，主线程等待所有子线程结束
 	}
 	
 	/**
 	 * 创建固定大小的线程池。每次提交一个任务就创建一个线程，直到线程达到线程池的最大大小。
 	 * 线程池的大小一旦达到最大值就会保持不变，如果某个线程因为执行异常而结束，那么线程池会补充一个新线程。
-	 * 以下创建了10个线程，只有5个在执行
+	 * 以下创建了10个线程，只有5个在执行，关闭一个正在运行的子线程会立即将一个空闲线程转为运行态
 	 * @throws InterruptedException 
 	 */
 	@Test
@@ -43,8 +43,8 @@ public class ThreadPoolTest {
 			//将线程放进线程池
 			pool.execute(timer);
 		}
-		Thread.sleep(60000);
 		pool.shutdown();
+		pool.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
 	}
 	
 	/**
@@ -61,8 +61,8 @@ public class ThreadPoolTest {
 			//将线程放进线程池
 			pool.execute(timer);
 		}
-		Thread.sleep(20000);
 		pool.shutdown();
+		pool.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
 	}
 	
 	/**
@@ -78,8 +78,8 @@ public class ThreadPoolTest {
 			//每5秒执行一次
 			pool.scheduleAtFixedRate(timer, 1000, 5000, TimeUnit.MILLISECONDS);
 		}
-		Thread.sleep(20000);
 		pool.shutdown();
+		pool.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
 	}
 	
 	@Test
@@ -97,6 +97,9 @@ public class ThreadPoolTest {
 		
 	}
 	
+	/**
+	 * 使用多线程测试框架GroboTestingJunit
+	 */
 	@Test
 	public void testMultiThread(){
 		TestRunnable runner = new TestRunnable(){
@@ -117,5 +120,9 @@ public class ThreadPoolTest {
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
+	}
+	
+	@Test
+	public void test(){
 	}
 }

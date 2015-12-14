@@ -53,6 +53,22 @@ public class PropertyUtils {
 		}
 	}
 	
+	/**
+	 * 设置要操作的属性文件,默认为只读操作
+	 * @param fileName 文件名
+	 */
+	public static void setPropertyFile(String fileName){
+		setPropertyFile(fileName, true);
+	}
+	
+	
+	private static String getFilePath(String fileName){
+		if(!fileName.startsWith("/")){
+			fileName = "/" + fileName;
+		}
+		return fileName;
+	}
+	
 	public static Properties getProperties(String fileName){
 		props = new Properties();
 		try {
@@ -74,19 +90,12 @@ public class PropertyUtils {
 	}
 	
 	/**
-	 * 设置要操作的属性文件,默认为只读操作
-	 * @param fileName 文件名
+	 * 线程安全
+	 * @param fileName
+	 * @return
 	 */
-	public static void setPropertyFile(String fileName){
-		setPropertyFile(fileName, true);
-	}
-	
-	
-	private static String getFilePath(String fileName){
-		if(!fileName.startsWith("/")){
-			fileName = "/" + fileName;
-		}
-		return fileName;
+	public static synchronized Properties getSafeProperties(String fileName){
+		return getProperties(fileName);
 	}
 	
 	/**
@@ -186,5 +195,6 @@ public class PropertyUtils {
 			}
 		}
 	}
+	
 	
 }

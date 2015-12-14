@@ -12,9 +12,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src/main/resources"/>
-	<classpathentry kind="src" path="src/test/resources"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+	<classpathentry including="**/*.java" kind="src" path="src/main/resources"/>
+	<classpathentry including="**/*.java" kind="src" path="src/test/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
@@ -24,6 +24,72 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/smack-bosh-4.1.5.jar" sourcepath="lib/smack-bosh-4.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/util-tools/lib/smack-bosh-4.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/smack-core-4.1.5.jar" sourcepath="lib/smack-core-4.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/util-tools/lib/smack-core-4.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/smack-debug-4.1.5.jar" sourcepath="lib/smack-debug-4.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/util-tools/lib/smack-debug-4.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/smack-experimental-4.1.5.jar" sourcepath="lib/smack-experimental-4.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/util-tools/lib/smack-experimental-4.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/smack-extensions-4.1.5.jar" sourcepath="lib/smack-extensions-4.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/util-tools/lib/smack-extensions-4.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/smack-jingle-old-4.1.5.jar" sourcepath="lib/smack-jingle-old-4.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/util-tools/lib/smack-jingle-old-4.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/smack-legacy-4.1.5.jar" sourcepath="lib/smack-legacy-4.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/util-tools/lib/smack-legacy-4.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/smack-resolver-dnsjava-4.1.5.jar" sourcepath="lib/smack-resolver-dnsjava-4.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/util-tools/lib/smack-resolver-dnsjava-4.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/smack-resolver-javax-4.1.5.jar" sourcepath="lib/smack-resolver-javax-4.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/util-tools/lib/smack-resolver-javax-4.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/smack-tcp-4.1.5.jar" sourcepath="lib/smack-tcp-4.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/util-tools/lib/smack-tcp-4.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="lib/GroboTestingJUnit-1.2.1-core.jar"/>
+	<classpathentry kind="lib" path="lib/smack-java7-4.1.5.jar"/>
+	<classpathentry kind="lib" path="lib/smack-sasl-provided-4.1.5.jar" sourcepath="lib/smack-sasl-provided-4.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/util-tools/lib/smack-sasl-provided-4.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/smack-compression-jzlib-4.1.5.jar" sourcepath="lib/smack-compression-jzlib-4.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/util-tools/lib/smack-compression-jzlib-4.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/smack-im-4.1.5.jar" sourcepath="lib/smack-im-4.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/util-tools/lib/smack-im-4.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -36,4 +36,5 @@ public class SocketMessagingTest {
 		client.sendMsg("@@@@");
 		client.stop();
 	}
+	
 }
